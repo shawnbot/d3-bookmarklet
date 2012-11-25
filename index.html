@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d3 bookmarklet</title>
+    <style type="text/css">
+      body {
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Drag this to your bookmarks bar: <a id="link">load d3</a></h1>
+    <script>
+      $.ajax("d3-bookmarklet.min.js", {
+        dataType: "text"
+      }).done(function(script) {
+        $("#link").attr("href", "javascript:" + script);
+      });
+    </script>
+  </body>
+</html>
